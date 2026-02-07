@@ -1,0 +1,5 @@
+{
+  "installCommand": "npm ci || npm install",
+  "buildCommand": "npx --yes vite build",
+  "outputDirectory": "dist"
+}
