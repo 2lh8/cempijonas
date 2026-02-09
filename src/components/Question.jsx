@@ -10,6 +10,9 @@ export default function Question({
   correctAnswer,
   revealState, // null | "selected" | "correct" | "wrong"
   hiddenOptions,
+  isTransitioningOut,
+  animateIn,
+  isFirstQuestion,
 }) {
   const getOptionClass = (index) => {
     const classes = ["option"];
@@ -41,8 +44,17 @@ export default function Question({
 
   const isDisabled = revealState !== null;
 
+  const containerClass = [
+    "question-container",
+    isFirstQuestion && !animateIn && "initial",
+    isTransitioningOut && "fade-out",
+    animateIn && "pop-in",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className="question-container">
+    <div className={containerClass}>
       <div className="question-box">
         <p className="question-text">{question}</p>
       </div>

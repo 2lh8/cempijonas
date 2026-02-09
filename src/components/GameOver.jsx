@@ -1,20 +1,23 @@
 import React from "react";
 import { MONEY_LADDER, SAFETY_NETS } from "../data/questions";
 
+const WIN_VIDEO_ID = "ihX6_MAEQeE";
+const WIN_VIDEO_EMBED = `https://www.youtube.com/embed/${WIN_VIDEO_ID}?autoplay=1`;
+
 export default function GameOver({ won, level, onRestart }) {
   let prize;
   if (won) {
     prize = MONEY_LADDER[MONEY_LADDER.length - 1];
   } else if (level === 0) {
-    prize = "$0";
+    prize = "Lygis";
   } else {
-    // Find highest safety net passed
+    // Rasti aukščiausią pasiektą saugų tašką
     const passedSafetyNets = SAFETY_NETS.filter((net) => net < level);
     if (passedSafetyNets.length > 0) {
       const highestSafetyNet = Math.max(...passedSafetyNets);
       prize = MONEY_LADDER[highestSafetyNet];
     } else {
-      prize = "$0";
+      prize = "Lygis";
     }
   }
 
@@ -44,26 +47,41 @@ export default function GameOver({ won, level, onRestart }) {
                 />
               ))}
             </div>
-            <h1 className="winner-title">CONGRATULATIONS!</h1>
-            <p className="winner-subtitle">You are a</p>
-            <h2 className="winner-amount">MILLIONAIRE!</h2>
-            <div className="winner-prize">{prize}</div>
+            <h1 className="winner-title">SVEIKINAM!</h1>
+            <p className="winner-subtitle">Tu esi tikras</p>
+            <h2 className="winner-amount">Čempi-Jonas!</h2>
+            <p className="winner-message">Tu tikrai pažįsti Juliją!</p>
+            <div className="spotify-widget">
+              <div className="spotify-widget-art">
+                <iframe
+                  title="Čempi-Jonas winner"
+                  src={WIN_VIDEO_EMBED}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="spotify-widget-info">
+                <span className="spotify-widget-title">Čempi-Jonas</span>
+                <span className="spotify-widget-artist">Pergalė</span>
+              </div>
+            </div>
+            <button className="restart-button" onClick={onRestart}>
+              Žaisti dar kartą
+            </button>
           </>
         ) : (
           <>
-            <h1 className="loser-title">Game Over</h1>
-            <p className="loser-message">
-              You answered incorrectly on question {level + 1}.
-            </p>
+            <h1 className="loser-title">Klaida! Laikas skausmui.</h1>
             <div className="loser-prize">
-              <span className="prize-label">You walk away with</span>
+              <span className="prize-label">Išsinešei</span>
               <span className="prize-amount">{prize}</span>
             </div>
+            <button className="restart-button" onClick={onRestart}>
+              Žaisti dar kartą
+            </button>
           </>
         )}
-        <button className="restart-button" onClick={onRestart}>
-          Play Again
-        </button>
       </div>
     </div>
   );

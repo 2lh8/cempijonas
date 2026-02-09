@@ -1,122 +1,140 @@
-// Questions organized by difficulty (Easy, Medium, Hard, Expert, Final)
-// Each question has: question text, 4 options, correct answer index (0-3)
+// Julijos & Jono viktorina – "Kas nori tapti milijonieriumi?"
+// Teisingi atsakymai eilės tvarka: D, A, B, A, C, D, A, C, B, D, A, D, B
 
 const questions = [
-  // Level 1 - $100 (Easy)
+  // 1 – €100
   {
-    question: "What is the capital of France?",
-    options: ["Berlin", "Madrid", "Paris", "Rome"],
-    correct: 2,
-  },
-  // Level 2 - $200 (Easy)
-  {
-    question: "Which planet is known as the Red Planet?",
-    options: ["Venus", "Mars", "Jupiter", "Saturn"],
-    correct: 1,
-  },
-  // Level 3 - $300 (Easy)
-  {
-    question: "How many continents are there on Earth?",
-    options: ["5", "6", "7", "8"],
-    correct: 2,
-  },
-  // Level 4 - $500 (Easy)
-  {
-    question: "What is the largest ocean on Earth?",
-    options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
-    correct: 3,
-  },
-  // Level 5 - $1,000 (Easy - Safety Net)
-  {
-    question: "Who painted the Mona Lisa?",
-    options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Michelangelo"],
-    correct: 2,
-  },
-  // Level 6 - $2,000 (Medium)
-  {
-    question: "What is the chemical symbol for gold?",
-    options: ["Go", "Gd", "Au", "Ag"],
-    correct: 2,
-  },
-  // Level 7 - $4,000 (Medium)
-  {
-    question: "In which year did the Titanic sink?",
-    options: ["1905", "1912", "1920", "1898"],
-    correct: 1,
-  },
-  // Level 8 - $8,000 (Medium)
-  {
-    question: "What is the smallest country in the world by area?",
-    options: ["Monaco", "San Marino", "Vatican City", "Liechtenstein"],
-    correct: 2,
-  },
-  // Level 9 - $16,000 (Medium)
-  {
-    question: "Which element has the atomic number 1?",
-    options: ["Helium", "Oxygen", "Carbon", "Hydrogen"],
-    correct: 3,
-  },
-  // Level 10 - $32,000 (Medium - Safety Net)
-  {
-    question: "Who wrote 'Romeo and Juliet'?",
-    options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
-    correct: 1,
-  },
-  // Level 11 - $64,000 (Hard)
-  {
-    question: "What is the longest river in the world?",
-    options: ["Amazon", "Nile", "Yangtze", "Mississippi"],
-    correct: 1,
-  },
-  // Level 12 - $125,000 (Hard)
-  {
-    question: "In computing, what does 'HTTP' stand for?",
+    question: "Ką Julija pagalvojo pirmą kartą pamačiusi Joną?",
     options: [
-      "HyperText Transfer Protocol",
-      "High Tech Transfer Process",
-      "HyperText Transmission Platform",
-      "High Transfer Text Protocol",
+      "Įdomus marškinių pasirinkimas",
+      "Rūpestingas",
+      "Ką jis pamatė Gintarėje?",
+      "Kažkas kabina",
+    ],
+    correct: 3,
+  },
+  // 2 – €200
+  {
+    question: "Koks pirmas filmas, kurį žiūrėjote dviese?",
+    options: ["Trainspotting", "Iron Claw", "Terminator", "5th Element"],
+    correct: 0,
+  },
+  // 3 – €500
+  {
+    question: "Kokį daiktą Julija pasiimtų į negyvenamą salą?",
+    options: [
+      "SPF kremą",
+      "Fotoaparatą (jei grįžtume iš salos)",
+      "Peilį",
+      "Degtinės butelį",
+    ],
+    correct: 1,
+  },
+  // 4 – €1,000
+  {
+    question: "Koks tavo drabužis labiausiai nepatinka Julijai?",
+    options: ["M-1 maikės", "Juoda striukė", "Tapkės", "Sportinės kelnės"],
+    correct: 0,
+  },
+  // 5 – €2,000 (saugus taškas)
+  {
+    question: "Kas Julijai yra didžiausia nepagarba santykiuose?",
+    options: [
+      "Dingimas be paaiškinimo",
+      "Nemokėjimas susidėlioti prioritetų",
+      "Melas",
+      "Žeminimas prie kitų",
+    ],
+    correct: 2,
+  },
+  // 6 – €4,000
+  {
+    question: "Pasak Julijos, koks aktorius filme vaidintų Joną?",
+    options: [
+      "Johnny Depp (Fear and Loathing in Las Vegas)",
+      "David Schwimmer (Rosas)",
+      "Michael Scott",
+      "Jim Carrey",
+    ],
+    correct: 3,
+  },
+  // 7 – €8,000
+  {
+    question: "Kur Julija norėtų gyventi, jei taptumėte milijonieriais?",
+    options: [
+      "Nuosavam name prie jūros",
+      "Viennoje, Austrijoje",
+      "Giedraičiuose",
+      "Cape Town, P. Afrikoje",
     ],
     correct: 0,
   },
-  // Level 13 - $250,000 (Expert)
+  // 8 – €16,000
   {
-    question: "Which scientist developed the theory of general relativity?",
-    options: ["Isaac Newton", "Niels Bohr", "Albert Einstein", "Max Planck"],
+    question: "Koks Jono įprotis Juliją labiausiai erzina?",
+    options: [
+      '"Greitas" išsimaudymas vonioje',
+      'Važiavimas į visas įmanomas parduotuves, dėl "gerų" akcijų',
+      "Kai manęs 10k. per dieną prašo eiti pamiegoti pietų miego",
+      "Labai garsiai klausytis muzikos",
+    ],
     correct: 2,
   },
-  // Level 14 - $500,000 (Expert)
+  // 9 – €32,000 (saugus taškas)
   {
-    question: "What is the rarest blood type in humans?",
-    options: ["O Negative", "AB Negative", "B Negative", "A Negative"],
+    question: 'Koks Julijos mėgstamiausias maistas, kai ji nori „comfort food"?',
+    options: ["Kebabas", "Bulvytės", "Pizza", "Barščiai"],
     correct: 1,
   },
-  // Level 15 - $1,000,000 (Final)
+  // 10 – €64,000
   {
-    question: "In what year was the first successful human heart transplant performed?",
-    options: ["1967", "1955", "1972", "1960"],
+    question: "Koks Julijos slaptas guilty pleasure?",
+    options: [
+      "Scrollinimas",
+      "Ilgi skincare ritualai",
+      "Britney Spears",
+      "Pabūti vienai ir nieko nedaryti",
+    ],
+    correct: 3,
+  },
+  // 11 – €125,000
+  {
+    question: "Kaip Julija apibūdintų Joną trimis žodžiais?",
+    options: [
+      "Mylintis, rūpestingas, dosnus",
+      "Juokingas, tvarkingas, undinas",
+      "Sarkastiškas, netvarkingas, undinas",
+      "Plepalas, svajotojas, undinas",
+    ],
     correct: 0,
+  },
+  // 12 – €500,000
+  {
+    question: "Kokį pažadą sau Julija laiko svarbiausiu?",
+    options: [
+      "Gyventi sąmoningai ir sveikai",
+      "Reguliariai sportuoti",
+      "Šeima pirmoje vietoje",
+      "Visi",
+    ],
+    correct: 3,
+  },
+  // 13 – €1,000,000
+  {
+    question: "Ką Julija labiausiai vertina žmonėse?",
+    options: [
+      "Grožį",
+      "Kai jie yra tokie, kokie yra",
+      "Iškalbą",
+      "Humoro jausmą",
+    ],
+    correct: 1,
   },
 ];
 
-export const MONEY_LADDER = [
-  "$100",
-  "$200",
-  "$300",
-  "$500",
-  "$1,000",
-  "$2,000",
-  "$4,000",
-  "$8,000",
-  "$16,000",
-  "$32,000",
-  "$64,000",
-  "$125,000",
-  "$250,000",
-  "$500,000",
-  "$1,000,000",
-];
+export const MONEY_LADDER = Array(13).fill("Lygis");
 
-export const SAFETY_NETS = [4, 9]; // indices of safety net levels (0-based)
+// Saugūs taškai – klausimų indeksai (nuo 0)
+export const SAFETY_NETS = [4, 8];
 
 export default questions;

@@ -10,11 +10,13 @@ export default function MoneyLadder({ currentLevel }) {
           const isCurrent = index === currentLevel;
           const isPast = index < currentLevel;
           const isSafetyNet = SAFETY_NETS.includes(index);
+          const isTopLevel = index === MONEY_LADDER.length - 1;
 
           const classes = ["ladder-item"];
           if (isCurrent) classes.push("ladder-current");
           if (isPast) classes.push("ladder-past");
           if (isSafetyNet) classes.push("ladder-safety");
+          if (isTopLevel) classes.push("ladder-top");
 
           return (
             <div key={index} className={classes.join(" ")}>
