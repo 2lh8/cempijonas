@@ -501,10 +501,10 @@ export default function Game({ onQuit }) {
       )}
       <div className="debug-menu">
         <button type="button" className="debug-menu-btn" onClick={handleDebugResetLifelines}>
-          Reset lifelines
+          Grąžinti pagalbas
         </button>
         <button type="button" className="debug-menu-btn" onClick={handleDebugSkipQuestion}>
-          Skip question
+          Praleisti klausimą
         </button>
       </div>
 

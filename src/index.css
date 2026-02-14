@@ -388,11 +388,8 @@ body {
   flex-direction: column;
   gap: 0.25rem;
   z-index: 50;
-  opacity: 0.6;
-}
-
-.debug-menu:hover {
-  opacity: 1;
+  padding: 0.25rem;
+  border-radius: 4px;
 }
 
 .debug-menu-btn {
@@ -403,6 +400,12 @@ body {
   border: 1px solid #444;
   border-radius: 4px;
   cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.debug-menu:hover .debug-menu-btn {
+  opacity: 1;
 }
 
 .debug-menu-btn:hover {

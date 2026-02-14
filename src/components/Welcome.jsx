@@ -86,7 +86,7 @@ export default function Welcome({ onStart }) {
       )}
       <div className="welcome-debug">
         <button type="button" className="debug-menu-btn" onClick={handleSkipIntro}>
-          Skip intro
+          Praleisti įžangą
         </button>
       </div>
 
